@@ -4,8 +4,8 @@ import { Button, TextField } from "@mui/material";
 import useGlobalState from "../../store";
 import { toast } from "sonner";
 
-export default function StartScreen({ setStep }) {
-  const userName = useGlobalState((state) => state.userName); // import the userName from the zustand store
+export default function StartScreen() {
+  const setStep = useGlobalState((state) => state.setStep); // import the setStep from the zustand store
   const setUserName = useGlobalState((state) => state.setUserName); // import the setUserName from the zustand store
   const nameRef = useRef("");
 

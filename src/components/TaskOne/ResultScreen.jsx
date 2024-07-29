@@ -9,16 +9,8 @@ export default function ResultScreen({ setStep, handleReset }) {
   return (
     <div className="flex justify-center items-center flex-col gap-6">
       <div className="text-center">
-        <ResultSuccess />
-        <h2 className="text-3xl font-medium">ResultScreen</h2>
-        {userName && score > 0 && (
-          <div>
-            <p>
-              Nice try {userName}! Your score is {score}
-            </p>
-          </div>
-        )}
-        {/* {score == 0 && <ResultFailure handleReset={handleReset} />} */}
+        {userName && score > 0 && <ResultSuccess />}
+        {score == 0 && <ResultFailure handleReset={handleReset} />}
       </div>
     </div>
   );

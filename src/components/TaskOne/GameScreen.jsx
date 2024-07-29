@@ -5,9 +5,8 @@ import ResultScreen from "./ResultScreen";
 import useGlobalState from "../../store";
 import { TextH2 } from "../shared/TextH2";
 
-export default function GameScreen({ setStep }) {
-  const userName = useGlobalState((state) => state.userName); // import the userName from the zustand store
-
+export default function GameScreen() {
+  const setStep = useGlobalState((state) => state.setStep); // import the setStep from the zustand store
   const score = useGlobalState((state) => state.score); // import the score from the zustand store
   const setScore = useGlobalState((state) => state.setScore); // import the setScore from the zustand store
 

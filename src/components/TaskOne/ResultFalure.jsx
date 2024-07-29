@@ -7,7 +7,7 @@ export default function ResultFailure({ handleReset }) {
   const setStep = useGlobalState((state) => state.setStep);
   return (
     <>
-      <div className="text-red-700 flex justify-center items-center min-h-screen flex-col font-bold bg-white ">
+      <div className="text-red-700 flex justify-center items-center min-h-[calc(100dvh-80px)] flex-col font-bold bg-white ">
         <div className="w-[120px] h-[120px] md:w-[150px] md:h-[150px] lg:w-[170px] lg:h-[170px]">
           <img src={SadFaceSvg} alt="Sad face" />
         </div>
