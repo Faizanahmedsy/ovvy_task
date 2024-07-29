@@ -48,7 +48,7 @@ export default function ResultSuccess() {
     <>
       <div className="text-yellow-600 flex justify-center items-center min-h-[calc(100dvh-80px)] flex-col font-bold bg-white ">
         <div className="w-[120px] h-[120px] md:w-[150px] md:h-[150px] lg:w-[170px] lg:h-[170px]">
-          <img src={SmileFaceSvg} />
+          <img src={SmileFaceSvg} alt="Smile Face" />
         </div>
         <div className="text-center text-[34px] sm:text-[40px] md:text-[60px] lg:text-[70px]">
           Great {userName} Your Score is {score}

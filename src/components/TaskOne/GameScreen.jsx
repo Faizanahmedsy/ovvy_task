@@ -1,10 +1,10 @@
-import { Button, Card } from "@mui/material";
 import { useEffect, useState } from "react";
-import { getDogImages } from "./GameScreenController";
-import ResultScreen from "./ResultScreen";
-import useGlobalState from "../../store";
-import { TextH2 } from "../shared/TextH2";
 import { toast } from "sonner";
+import { Button, Card } from "@mui/material";
+import useGlobalState from "@/store";
+import { getDogImages } from "./GameScreenController";
+import ResultScreen from "@/components/TaskOne//ResultScreen";
+import { TextH2 } from "@/components/shared/TextH2";
 
 export default function GameScreen() {
   const setStep = useGlobalState((state) => state.setStep); // import the setStep from the zustand store
@@ -26,7 +26,7 @@ export default function GameScreen() {
       setScore(score + 10);
       toast.success("Correct!");
     } else {
-      <ResultScreen score={score} reset={handleReset} />;
+      <ResultScreen score={score} handleReset={handleReset} />;
       // document.getElementById("2").style.background("red");
       setStep(3);
     }
@@ -63,7 +63,7 @@ export default function GameScreen() {
         {message && <p>{message}</p>}
       </div>
       <div className="bg-blue-200 h-full  min-h-[calc(100dvh-20px)] w-2/6 grid place-content-center">
-        Score : {score ? score : 0}
+        <div>Score : {score ? score : 0}</div>
         <Button variant="contained" color="error" onClick={handleReset}>
           Reset
         </Button>

@@ -1,8 +1,7 @@
-import { Button } from "@mui/material";
-import useGlobalState from "../../store";
-import ResultFailure from "./ResultFalure";
-import ResultSuccess from "./ResultSuccess";
-export default function ResultScreen({ setStep, handleReset }) {
+import useGlobalState from "@/store";
+import ResultFailure from "@/components/TaskOne/ResultFailure";
+import ResultSuccess from "@/components/TaskOne/ResultSuccess";
+export default function ResultScreen({ handleReset }) {
   const userName = useGlobalState((state) => state.userName); // import the userName from the zustand store
   const score = useGlobalState((state) => state.score); // import the score from the zustand store
 

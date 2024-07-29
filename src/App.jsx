@@ -1,10 +1,9 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
-
 import { Toaster } from "sonner";
 import { ThemeProvider } from "@mui/material";
+import { BrowserRouter } from "react-router-dom";
+import AppRoutes from "@/components/shared/AppRoutes.jsx";
 import theme from "./theme.jsx";
-import AppRoutes from "./components/shared/AppRoutes.jsx";
+import "./App.css";
 
 function App() {
   return (
