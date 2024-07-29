@@ -6,7 +6,7 @@ import StartScreen from "@/components/TaskOne/StartScreen";
 export default function TaskOne() {
   const step = useGlobalState((state) => state.step);
   return (
-    <div className="flex justify-center items-center flex-col min-h-[calc(100dvh-80px)] gap-4">
+    <div>
       {step === 1 && <StartScreen />}
       {step === 2 && <GameScreen />}
       {step === 3 && <ResultScreen />}

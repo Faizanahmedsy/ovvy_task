@@ -4,6 +4,7 @@ import { getDogImages } from "./GameScreenController";
 import ResultScreen from "./ResultScreen";
 import useGlobalState from "../../store";
 import { TextH2 } from "../shared/TextH2";
+import { toast } from "sonner";
 
 export default function GameScreen() {
   const setStep = useGlobalState((state) => state.setStep); // import the setStep from the zustand store
@@ -23,7 +24,7 @@ export default function GameScreen() {
     if (option === dogBreed) {
       getDogImages(setDogImages, setDogBreed, setOptions);
       setScore(score + 10);
-      setMessage("Correct!");
+      toast.success("Correct!");
     } else {
       <ResultScreen score={score} reset={handleReset} />;
       // document.getElementById("2").style.background("red");
@@ -36,7 +37,7 @@ export default function GameScreen() {
     setMessage("");
   };
   return (
-    <div className="flex justify-center items-center w-full ">
+    <div className="flex justify-center items-center w-screen">
       <div className="flex justify-center items-center bg-violet-100 min-h-[calc(100dvh-20px)]  w-5/6">
         <Card className="p-4 w-[500px]">
           <TextH2 className="text-center">Dog Breed Quiz</TextH2>
