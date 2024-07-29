@@ -1,20 +1,21 @@
-import React, { useState } from "react";
-import { Link as RouterLink } from "react-router-dom";
+import { menuItems } from "@/constants";
+import MenuIcon from "@mui/icons-material/Menu";
 import {
   AppBar,
-  Toolbar,
-  Typography,
+  Box,
   Button,
-  IconButton,
   Drawer,
+  IconButton,
   List,
   ListItem,
   ListItemText,
-  useTheme,
+  Toolbar,
+  Typography,
   useMediaQuery,
-  Box,
+  useTheme,
 } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
+import { useState } from "react";
+import { Link as RouterLink } from "react-router-dom";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -25,20 +26,16 @@ const Navbar = () => {
     setMobileOpen(!mobileOpen);
   };
 
-  const menuItems = [
-    { text: "Game", path: "/game" },
-    { text: "Shape", path: "/shape" },
-    { text: "Bin", path: "/bin" },
-  ];
-
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <List>
-        {menuItems.map((item) => (
-          <ListItem key={item.text} component={RouterLink} to={item.path}>
-            <ListItemText primary={item.text} />
-          </ListItem>
-        ))}
+        {menuItems &&
+          Array.isArray(menuItems) &&
+          menuItems.map((item) => (
+            <ListItem key={item.text} component={RouterLink} to={item.path}>
+              <ListItemText primary={item.text} />
+            </ListItem>
+          ))}
       </List>
     </Box>
   );
